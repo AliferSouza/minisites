@@ -11,7 +11,7 @@ export default function Router(Paginas, dados){
        const pathname = location.pathname    
 
        console.log(Paginas)
-       Paginas[pathname] ? Render(Paginas[pathname]) : Render(Paginas["/erro"])   
+       Paginas[pathname] ? Render(Paginas[pathname]) : Render(Paginas["/home"])   
        
    
        function Render(paginaASerRenderizada, dados){    

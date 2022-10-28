@@ -4,6 +4,7 @@ import addBanco from"./src/addBanco.js"
 import pegarUrlData from"./src/pegarUrlData.js"
 import gerarQueryString from"./src/gerarQueryString.js"
 import link from "./src/link.js"
+import select from "./src/select.js"
 
 const Emitter = {
    events: {},
@@ -34,5 +35,6 @@ export{
    pegarUrlData,
    gerarQueryString,
    link,
+   select,
    Emitter
 }

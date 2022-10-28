@@ -1,7 +1,7 @@
 import {addBanco, router} from "../lib/index.js"
 import gerarLinks from"../page/gerarLinks.js"
 
-export default function cadastroPrincipal() {
+export default function home() {
 
     window.salvarLoja = () => {
         const Nome = document.querySelector(".Name").value
@@ -20,7 +20,7 @@ export default function cadastroPrincipal() {
             addBanco("dono", miniSite) 
 
             window.history.pushState( null, null, "/gerarLinks");
-            router({"/gerarLinks": gerarLinks})
+            router({gerarLinks})
          
         }
     }

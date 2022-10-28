@@ -6,44 +6,37 @@ export default function gerarLinks() {
     const dados = apiGerar("dono", "link")
 
 
-
-
-
     window.addEventListener("DOMContentLoaded", () => {       
         const pegarIcon = window.document.querySelector("fieldset")
-        let url = document.querySelector(".url")
-        pegarIcon.addEventListener("click", e => {       
-        const valores = {
-               URL: url.value,
-               ICONE: e.target.src,
-               NOME_ICONE: e.target.id
-         }  
-         data.push(valores)
-           
+        const url = window.document.querySelector(".url")
+        pegarIcon.addEventListener("click", e => {               
+                 const valores = {
+                    URL: url.value,
+                    ICONE: e.target.src,
+                    NOME_ICONE: e.target.id
+                }  
+            data.push(valores)
         })
+        
     })
-
-
 
 
     window.salvarLink = () => {    
         const dataIndexFinal = data[data.length - 1]
-        let url = document.querySelector(".url")
-            if (!url) {
-            alert("Valores obrigatorios para todos os campos")
-          } else {
-            addBanco("link", dataIndexFinal)
-
+         addBanco("link", dataIndexFinal)
             while (data.length) {
                 data.pop();
             }
         }
-    }
+    
+
 
     window.link = () => {
         window.location.href = "minisite" + dados
     }
 
+
+    console.log(dados)
 
 
     return `
@@ -57,7 +50,7 @@ export default function gerarLinks() {
             <form action="#">
 
                 <div class="input-field">
-                    <input type="text" class="url" placeholder="Url" required>
+                    <input type="text" class="url" placeholder="" required>
                 </div>
 
                 <div class="input-field" >
@@ -65,7 +58,7 @@ export default function gerarLinks() {
                     <fieldset class="radio-image escolhaFoto">
                         <label for="M">
                             
-                            <img src="./src/img/facebook.png" id="facebook" name="facebook" class="escolha" alt="facebook"
+                            <img src="./src/img/facebook.png"id="facebook" name="facebook" class="escolha" alt="facebook"
                                 height="45px">
                         </label>
 

@@ -21,7 +21,7 @@ export default function miniSite() {
     </div>   
     <h1 style="color:" > </h1>
     <div class="container_Links">
-    <h2>Seja Bem-vindo!</h2>
+    <h2>Seja Bem-vindo! </h2>
     <h2>Visite minhas paginas </h2>
        
     ${Links(data.b)}

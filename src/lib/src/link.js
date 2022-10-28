@@ -1,6 +1,7 @@
-import Router from "./router.js";
+import router from "./router.js";
 
-export default function link(link, props){  
-    window.history.pushState( null, null, link);
-    Router({ [link]: props} )
+export default function link(link){  
+    const keys = Object.keys(link)
+   window.history.pushState( null, null, keys);
+   router()
  }

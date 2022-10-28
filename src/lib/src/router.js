@@ -1,5 +1,5 @@
 
-export default function Router(Paginas, dados){
+export default function Router(Paginas){
 
     function navigateTo(url){
        history.pushState(null, null, url)
@@ -9,14 +9,18 @@ export default function Router(Paginas, dados){
    App()   
    function App(){ 
        const pathname = location.pathname   
+       const pathnameTratado = pathname.replace("/", '')
+     //  console.log(Paginas)
+     //  console.log(pathnameTratado)
 
-       console.log(Paginas)
+      // console.log(Paginas[pathnameTratado])
 
-         Paginas[pathname] ? Render(Paginas[pathname]) : Render(Paginas["/home"])   
+         Paginas[pathnameTratado] ? Render(Paginas[pathnameTratado]) : Render(Paginas["home"])   
        
    
-       function Render(paginaASerRenderizada, dados){   
-             window.document.querySelector(".root").innerHTML = paginaASerRenderizada()
+       function Render(paginaASerRenderizada){      
+        window.document.querySelector(".root").innerHTML = paginaASerRenderizada()
+
        }
 
 

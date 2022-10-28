@@ -1,6 +1,6 @@
 import home from"./page/home.js"
 import gerarLinks from"./page/gerarLinks.js"
-import miniSite from "./page/minisite.js"
+import minisite from "./page/minisite.js"
 import {router, link}  from"./lib/index.js"
 
 const URL = location.href.includes("?") 
@@ -8,12 +8,11 @@ const URL = location.href.includes("?")
 
 //Auth
 if (URL) {   
-     router({"/minisite": miniSite})  
+     router({minisite})  
 } else if(localStorage.hasOwnProperty("dono")) {
-     link("/gerarLinks", gerarLinks)
-     router({"/minisite": miniSite})
+     router({gerarLinks, minisite})
 } else{
-     router({"/home": home})
+     router({home})
 }
 
 
